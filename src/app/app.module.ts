@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchSectionComponent } from './components/search-section/search-section.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +20,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NotFoundComponent,
     HeaderComponent,
     SearchSectionComponent,
-    DashboardComponent
+    DashboardComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    FontAwesomeModule],
+    FontAwesomeModule,
+    NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })
