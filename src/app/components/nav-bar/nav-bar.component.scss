@@ -2,7 +2,12 @@
 @import "../../../mixins.scss";
 @import "../../../variables.scss";
 
-nav {
+section {
     height: $navbar-height;
     background-color: $alt-grey;
+    
+    nav { 
+    @include flex-row(space-between);
+    padding: $base-spacing;
+    }
 }
