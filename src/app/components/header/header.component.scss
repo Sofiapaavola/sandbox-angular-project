@@ -1,0 +1,8 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+@import "../../../variables.scss";
+
+section { 
+    height: calc(100vh - $navbar-height);
+    background-color: red;
+}
