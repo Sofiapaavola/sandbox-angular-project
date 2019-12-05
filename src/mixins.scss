@@ -1,0 +1,19 @@
+@import "src/variables.scss";
+
+@mixin primary-heading {
+  font-size: 3em;
+  color: black;
+  margin: reset;
+}
+
+@mixin flex-row($alignment) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $alignment;
+}
+
+@mixin flex-column ($alignment) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $alignment;
+}
