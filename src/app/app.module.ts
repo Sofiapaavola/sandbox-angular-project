@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { QuoteListComponent } from './components/quote-list/quote-list.component';
+import { QuoteComponent } from './components/quote/quote.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { QuoteListComponent } from './components/quote-list/quote-list.component
     CarouselComponent,
     SearchBarComponent,
     QuoteListComponent,
+    QuoteComponent,
   ],
   imports: [
     BrowserModule,

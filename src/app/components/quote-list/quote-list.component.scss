@@ -1,0 +1,8 @@
+@import "../../../styles.scss";
+@import "../../../mixins.scss";
+@import "../../../variables.scss";
+
+section { 
+    height: 100vh; 
+    @include flex-row(space-evenly); 
+}
