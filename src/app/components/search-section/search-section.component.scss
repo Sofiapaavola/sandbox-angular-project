@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+@import "../../../mixins.scss";
+@import "../../../variables.scss";
+
+
+section { 
+    height: 500px; 
+    background-color: $dark-gray; 
+}

@@ -1,13 +1,36 @@
-@import "../../../variables.scss";
+@import "../../../styles.scss";
 @import "../../../mixins.scss";
 @import "../../../variables.scss";
 
 section {
-    height: $navbar-height;
-    background-color: $alt-grey;
+    background-color: $dark-gray;
+    color: white; 
     
     nav { 
+    height: $navbar-height;
     @include flex-row(space-between);
-    padding: $base-spacing;
+    align-items: center;
+    padding: 0 $base-spacing 0;
+    opacity: 0.6; 
+
+    #hamburger { 
+        display: none;
+    }
+
+    @include md { 
+
+        h1, .icon-bars { 
+        display: none;
+        }
+
+        #hamburger { 
+            display: inline-block;
+            text-align: end;
+        }
+    }
+
+        &:hover { 
+            opacity: 1; 
+        }
     }
 }

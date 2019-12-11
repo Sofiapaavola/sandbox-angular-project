@@ -1,0 +1,10 @@
+@import "../../../styles.scss";
+@import "../../../mixins.scss";
+@import "../../../variables.scss";
+
+div { 
+    @include flex-column(space-between);
+    align-items: center;
+    padding: $base-spacing*2;
+    height: 100%;
+}

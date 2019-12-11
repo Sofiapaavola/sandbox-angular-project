@@ -11,6 +11,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchSectionComponent } from './components/search-section/search-section.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { QuoteListComponent } from './components/quote-list/quote-list.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     SearchSectionComponent,
     DashboardComponent,
     CarouselComponent,
+    SearchBarComponent,
+    QuoteListComponent,
   ],
   imports: [
     BrowserModule,
