@@ -1,6 +1,13 @@
 <section> 
-    <h2>{{ quote.Title }}</h2>
-    <p> {{ quote.author }}</p>
-    <img [src]="quote.media" [alt]="altText" />
+    <h2 *ngIf="!this.quote.media" class="alt-title">
+            {{ book.title }}
+    </h2>
+    <img [src]="cover" alt="placeholder" />
+    <!-- <img
+        src="../../../assets/images/heart-open.png"
+        alt="Empty heart"
+        *ngIf="!book.favourite"
+        (click)="handleClick('open', $event)"
+    /> -->
 </section>
 

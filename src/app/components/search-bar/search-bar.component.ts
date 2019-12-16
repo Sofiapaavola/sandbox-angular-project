@@ -10,7 +10,7 @@ export class SearchBarComponent implements OnInit {
   @Output() handleSearch = new EventEmitter();
   @Input() placeholder: string;
 
-  faSearch: IconDefinition | string = faSearch;
+  // faSearch: IconDefinition | string = faSearch;
   searchText: string;
 
   handleInput(event) {

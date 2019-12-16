@@ -1,10 +1,13 @@
 <section>
     <app-search-bar (handleSearch)="filterQuotes($event)"></app-search-bar>
-    <div
+    <!-- <div
     class="quote"
     *ngFor="let quote of filteredQuotes"
-  ></div>
+  ></div> -->
+  <div *ngFor="let quote of quotes">
     <app-quote [quote]="quote"></app-quote> 
+  </div>
+    
 </section>
 
 <!-- 

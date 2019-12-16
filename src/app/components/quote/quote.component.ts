@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { IQuote } from 'src/assets/data/quotes';
+import { IQuote, emptyIQuote } from 'src/assets/data/quotes';
 
 @Component({
   selector: 'app-quote',
@@ -7,13 +7,18 @@ import { IQuote } from 'src/assets/data/quotes';
   styleUrls: ['./quote.component.scss']
 })
 export class QuoteComponent implements OnInit {
-  @Input() quote: IQuote;
-  altText: string;
+  @Input() quote: IQuote = emptyIQuote;
+  
+  cover = "";
 
   constructor() { }
 
   ngOnInit() {
-    this.altText = this.quote + "'s poster";
+    this.cover = this.getCoverImage(this.quote);
+  }
+
+  getCoverImage(quote: IQuote) {
+    return quote.media;
   }
 
 }

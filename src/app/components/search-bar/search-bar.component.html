@@ -1,9 +1,11 @@
 <div class="search">
     <input
-      #search
-      [placeholder]="placeholder"
-      type="text"
-      (input)="handleSearch.emit(search.value)"
+    type="text"
+    [placeholder]="placeholder"
+    #search
+    (input)="handleSearch.emit(search.value)"
+    (keyup)="handleInput($event)"
+    [(ngModel)]="searchText"
     />
 </div>
 
