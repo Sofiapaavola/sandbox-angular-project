@@ -1,24 +1,6 @@
 <section> 
-    <article>
-    <p>Quote<p> 
-    <p>Author<p> 
-</article>
-
-<article>
-    <p>Quote<p> 
-    <p>Author<p> 
-</article>
-
-
-<article>
-    <p>Quote<p> 
-    <p>Author<p> 
-</article>
-
-
-<article>
-    <p>Quote<p> 
-    <p>Author<p> 
-</article>
+    <h2>{{ quote.Title }}</h2>
+    <p> {{ quote.author }}</p>
+    <img [src]="quote.media" [alt]="altText" />
 </section>
 

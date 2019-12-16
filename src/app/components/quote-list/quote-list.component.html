@@ -1,3 +1,11 @@
 <section>
-    <app-quote></app-quote> 
+    <app-search-bar (handleSearch)="filterQuotes($event)"></app-search-bar>
+    <div
+    class="quote"
+    *ngFor="let quote of filteredQuotes"
+  ></div>
+    <app-quote [quote]="quote"></app-quote> 
 </section>
+
+<!-- 
+[routerLink]="['/quote', quote.id]" -->

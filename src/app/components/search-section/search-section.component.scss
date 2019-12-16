@@ -6,4 +6,11 @@
 section { 
     height: 100vh; 
     background-color: $dark-gray; 
+
+    div.quote {
+        height: 350px;
+        width: 250px;
+        margin-top: 20px;
+      }
+      
 }

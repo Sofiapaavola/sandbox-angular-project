@@ -3,6 +3,7 @@
       #search
       [placeholder]="placeholder"
       type="text"
+      (input)="handleSearch.emit(search.value)"
     />
 </div>
 

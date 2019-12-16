@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,6 +15,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { QuoteListComponent } from './components/quote-list/quote-list.component';
 import { QuoteComponent } from './components/quote/quote.component';
+import { QuoteServiceService } from "./services/quote-service.service";
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -33,8 +37,10 @@ import { QuoteComponent } from './components/quote/quote.component';
     BrowserModule,
     AppRoutingModule, 
     FontAwesomeModule,
-    NgbModule],
-  providers: [],
+    HttpClientModule,
+    NgbModule, 
+    FormsModule],
+  providers: [QuoteServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
