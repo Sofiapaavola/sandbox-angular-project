@@ -3,13 +3,21 @@
 @import "../../../variables.scss";
 
 
-section { 
+main { 
     height: 100vh; 
     background-color: $dark-gray; 
+    text-align: center;
 
-    div.quote {
-        height: 350px;
-        width: 250px;
+    section.button-search { 
+      button { 
+        margin-top: $base-spacing; 
+        margin-left: $base-spacing;
+      }
+    }
+
+    section.quote {
+        height: 450px;
+        width: 350px;
         margin-top: 20px;
       }
       

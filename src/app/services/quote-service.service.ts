@@ -4,17 +4,13 @@ import { Injectable } from '@angular/core';
 import { IQuote } from "src/assets/data/quotes";
 import { Subject } from "rxjs";
 
-export interface IQuoteResponse {
-  type: string;
-  properties: IQuoteData[];
-}
-
 export interface IQuoteData {
   id: string;
   author: string;
   title: string;
-  mediaInfo: IMediaInfo;
-  cat: string;
+  quote: string;
+  mediaInfo?: IMediaInfo;
+  cat?: string;
 }
 
 export interface IMediaInfo {
@@ -36,8 +32,10 @@ export class QuoteServiceService {
 
   constructor(private httpClient: HttpClient) { this.author = new Subject(); }
 
-  fetchQuoteBySearch(author: string): any {
-    return this.searchHealthThroughWords().then(res => res);
+  fetchQuoteBySearch(): any {
+    const one = this.searchHealthThroughWords().then(res => res);
+    const two = this.searchGoodQuotes().then(res => res);
+    return one && two; 
   }
 
   searchHealthThroughWords() {
@@ -52,7 +50,7 @@ export class QuoteServiceService {
       .get(`https://healthruwords.p.rapidapi.com/v1/quotes/`, httpOptions)
       .toPromise()
       .then((res: IQuoteData) => {
-          const { mediaInfo, id, author, title, cat } = res;
+          const { mediaInfo, id, author, title } = res;
           console.log(res[.0])
           return res[.0];
       })
@@ -60,6 +58,28 @@ export class QuoteServiceService {
         console.log("Errror", err);
         throw err;
       });
+  }
+
+  searchGoodQuotes(): any {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "x-rapidapi-host": "good-quotes.p.rapidapi.com",
+		    "x-rapidapi-key": "2e833cf0f6mshe7bd37670112e95p1073a6jsnbe7548d95ab3"
+      })
+    };
+    return this.httpClient
+      .get(`https://good-quotes.p.rapidapi.com/tag/wisdom`, httpOptions)
+      .toPromise()
+      .then((res: IQuoteData) => {
+          const { author, title, mediaInfo, quote } = res;
+          console.log(res)
+          return res;
+      })
+      .catch((err: Error) => {
+        console.log("Errror", err);
+        throw err;
+      });
+
   }
 }
 

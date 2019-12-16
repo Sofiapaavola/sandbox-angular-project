@@ -6,8 +6,8 @@ import { SearchSectionComponent } from './components/search-section/search-secti
 
 
 const routes: Routes = [
-  { path: "quotes", component: QuoteListComponent },
-  { path: "dashboard", component: SearchSectionComponent },
+  { path: "quotes", component: SearchSectionComponent },
+  { path: "dashboard", component: QuoteListComponent },
 
   // { path: "movie/:id", component: SelectedMovieComponent },
   // { path: "favourites", component: FavouritesComponent },

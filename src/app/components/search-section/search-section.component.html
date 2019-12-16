@@ -1,7 +1,9 @@
-<section>
-    <input type="text" [(ngModel)]="search" />
-    <button (click)="searchQuote()">search</button>
-</section>
-<section class="quote" *ngIf="quote">
-    <app-quote [quote]="quote"></app-quote>
-</section>
+<main>
+    <section class="button-search">
+        <input type="text" [(ngModel)]="search" />
+        <button (click)="searchQuote()">search</button>
+    </section>
+    <section class="quote" *ngIf="quote">
+        <app-quote [quote]="quote"></app-quote>
+    </section>
+</main> 
