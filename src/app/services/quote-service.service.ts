@@ -1,7 +1,7 @@
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { IQuote } from "src/assets/data/quotes";
+import { IQuote, IUniformQuote } from "src/assets/data/quotes";
 import { Subject } from "rxjs";
 
 export interface IQuoteData {
@@ -11,6 +11,16 @@ export interface IQuoteData {
   quote: string;
   mediaInfo?: IMediaInfo;
   cat?: string;
+}
+
+export interface IGoodQuoteResponse {
+  quotes: IGoodQuoteData[]; 
+}
+
+export interface IGoodQuoteData {
+  author: string; 
+  media: string;
+  quote: string; 
 }
 
 export interface IMediaInfo {
@@ -70,8 +80,8 @@ export class QuoteServiceService {
     return this.httpClient
       .get(`https://good-quotes.p.rapidapi.com/tag/wisdom`, httpOptions)
       .toPromise()
-      .then((res: IQuoteData) => {
-          const { author, title, mediaInfo, quote } = res;
+      .then((res: IGoodQuoteData): IUniformQuote => {
+          const { media, author, quote } = res;
           console.log(res)
           return res;
       })

@@ -6,6 +6,12 @@ export interface IQuote {
     cat: string; 
   }
 
+  export interface IUniformQuote { 
+    author: string; 
+    quote: string; 
+    media: string; 
+  }
+
   export const emptyIQuote = {
     id: "",
     title: "",
